@@ -8,4 +8,3 @@ install: composer install
 
 env:
   - DB_DATABASE=':memory:' DB_CONNECTION=sqlite
-  
