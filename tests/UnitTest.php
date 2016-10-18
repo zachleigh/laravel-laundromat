@@ -2,7 +2,6 @@
 
 namespace LaravelLaundromat\tests;
 
-use LaravelLaundromat\tests\testdata\TestModel;
 use LaravelLaundromat\tests\testdata\BrokenCleanUser;
 use LaravelLaundromat\tests\testdata\StrictCleanUser;
 

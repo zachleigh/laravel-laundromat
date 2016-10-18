@@ -15,7 +15,7 @@ class CleanUser extends Cleaner
         'username',
         'favorite_color',
         'family.last_name',
-        'family.business.name'
+        'family.business.name',
     ];
 
     /**
@@ -27,6 +27,6 @@ class CleanUser extends Cleaner
         'favoriteColorString',
         'readableBirthday',
         'family.placeString',
-        'family.business.contactString'
+        'family.business.contactString',
     ];
 }
