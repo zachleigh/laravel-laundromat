@@ -3,6 +3,7 @@
 namespace LaravelLaundromat\tests;
 
 use LaravelLaundromat\tests\testdata\TestModel;
+use LaravelLaundromat\tests\testdata\BrokenCleanUser;
 use LaravelLaundromat\tests\testdata\StrictCleanUser;
 
 class UnitTest extends TestCase
@@ -267,5 +268,17 @@ class UnitTest extends TestCase
         $withProperty = $clean->users[0]->readable_birthday;
 
         $this->assertEquals($withProperty, $withMethod);
+    }
+
+    /**
+     * @test
+     */
+    public function invalid_relationships_are_stored_as_null()
+    {
+        $clean = $this->user->clean(BrokenCleanUser::class);
+
+        $this->assertObjectHasAttribute('invalidRelationship', $clean);
+
+        $this->assertEquals($clean->invalidRelationship, null);
     }
 }

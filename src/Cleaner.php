@@ -170,6 +170,10 @@ class Cleaner
             return $this->{$key} = $this->getValue($dirty, $property, $type);
         }
 
+        if (is_null($dirty->{$relation})) {
+            return $object->{$relation} = null;
+        }
+
         if (!$dirty->{$relation} instanceof Collection) {
             $value = $this->getValue($dirty->{$relation}, $property, $type);
 
