@@ -4,7 +4,6 @@ namespace LaravelLaundromat\tests\testdata;
 
 use LaravelLaundromat\Washable;
 use Illuminate\Database\Eloquent\Model;
-use LaravelLaundromat\tests\testdata\CleanFamily;
 
 class Family extends Model
 {
@@ -13,7 +12,7 @@ class Family extends Model
     protected $fillable = [
         'last_name',
         'location',
-        'state'
+        'state',
     ];
 
     protected $defaultCleaner = CleanFamily::class;

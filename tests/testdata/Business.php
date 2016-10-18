@@ -3,7 +3,6 @@
 namespace LaravelLaundromat\tests\testdata;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelLaundromat\tests\testdata\CleanUser;
 
 class Business extends Model
 {
@@ -13,7 +12,7 @@ class Business extends Model
         'name',
         'address',
         'phone_number',
-        'family_id'
+        'family_id',
     ];
 
     public function family()

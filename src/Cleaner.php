@@ -3,7 +3,6 @@
 namespace LaravelLaundromat;
 
 use Illuminate\Support\Collection;
-use LaravelLaundromat\EmptyCleaner;
 
 class Cleaner
 {
@@ -26,8 +25,8 @@ class Cleaner
     /**
      * Call snake_cased property names with studlyCased methods.
      *
-     * @param  string $name      [Name of method called]
-     * @param  array $arguments
+     * @param string $name      [Name of method called]
+     * @param array  $arguments
      *
      * @return mixed
      */
@@ -211,7 +210,7 @@ class Cleaner
                 return $object->{$name}();
             }
 
-            return null;
+            return;
         }
 
         return $object->{$name};

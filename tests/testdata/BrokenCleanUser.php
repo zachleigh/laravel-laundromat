@@ -12,7 +12,7 @@ class BrokenCleanUser extends Cleaner
      * @var array
      */
     protected $allowed = [
-        'invalidRelationship.property'
+        'invalidRelationship.property',
     ];
 
     /**
