@@ -7,7 +7,6 @@ use Illuminate\Contracts\Console\Kernel;
 use LaravelLaundromat\tests\testdata\User;
 use LaravelLaundromat\tests\testdata\Family;
 use LaravelLaundromat\tests\testdata\Business;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use LaravelLaundromat\LaundromatServiceProvider;
 use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
 use LaravelLaundromat\tests\testdata\migrations\CreateUsersTable;
@@ -16,8 +15,6 @@ use LaravelLaundromat\tests\testdata\migrations\CreateBusinessTable;
 
 abstract class TestCase extends IlluminateTestCase
 {
-    use DatabaseTransactions;
-
     /**
      * Testing property bag register.
      *
