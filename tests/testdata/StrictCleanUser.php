@@ -14,7 +14,7 @@ class StrictCleanUser extends Cleaner
     protected $allowed = [
         'username',
         'family.business.name',
-        'invalid_property'
+        'invalid_property',
     ];
 
     /**
@@ -24,6 +24,6 @@ class StrictCleanUser extends Cleaner
      */
     protected $methods = [
         'family.business.contactString',
-        'invalidMethod'
+        'invalidMethod',
     ];
 }

@@ -16,11 +16,11 @@ class User extends Model
         'password',
         'favorite_color',
         'birthday',
-        'family_id'
+        'family_id',
     ];
 
     protected $casts = [
-        'birthday' => 'date'
+        'birthday' => 'date',
     ];
 
     protected $defaultCleaner = CleanUser::class;

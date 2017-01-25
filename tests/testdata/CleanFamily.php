@@ -14,7 +14,7 @@ class CleanFamily extends Cleaner
     protected $allowed = [
         'state',
         'users.username',
-        'users.birthday'
+        'users.birthday',
     ];
 
     /**
@@ -23,6 +23,6 @@ class CleanFamily extends Cleaner
      * @var array
      */
     protected $methods = [
-        'users.readableBirthday'
+        'users.readableBirthday',
     ];
 }

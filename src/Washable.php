@@ -38,7 +38,7 @@ trait Washable
     protected function callCleaner($cleanerName)
     {
         $cleaner = $this->resolveCleaner($cleanerName);
-        
+
         if (class_exists($cleaner)) {
             $cleanerObject = new $cleaner();
 
