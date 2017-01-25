@@ -1,6 +1,7 @@
 {
     "name": "zachleigh/laravel-laundromat",
     "description": "Clean up objects before sending them client-side.",
+    "keywords": ["laravel"],
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -15,17 +16,14 @@
     },
 
     "require-dev": {
-        "laravel/laravel": "5.2.*",
+        "laravel/laravel": "5.3.*",
         "phpunit/phpunit": "~4.0"
     },
 
     "autoload": {
         "psr-4": {
             "LaravelLaundromat\\": "src/"
-        },        
-        "files": [
-
-        ]
+        }
     },
 
     "autoload-dev": {
