@@ -57,7 +57,7 @@ class CreateCleaner extends Command
     /**
      * Write the property bag file into the settings folder.
      *
-     * @param  string $namespace
+     * @param string $namespace
      */
     protected function writeCleaner($name, $namespace)
     {

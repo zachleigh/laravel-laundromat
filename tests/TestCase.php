@@ -40,7 +40,7 @@ abstract class TestCase extends IlluminateTestCase
 
         return $app;
     }
-    
+
     /**
      * Setup DB and test variables before each test.
      */
@@ -84,13 +84,13 @@ abstract class TestCase extends IlluminateTestCase
         $this->createSibling($family);
 
         return User::create([
-            'username' => 'bettylou',
-            'email' => 'bettylou@example.com',
-            'ssn' => '123-45-6789',
-            'password' => Hash::make('randomstring'),
+            'username'       => 'bettylou',
+            'email'          => 'bettylou@example.com',
+            'ssn'            => '123-45-6789',
+            'password'       => Hash::make('randomstring'),
             'favorite_color' => 'pink',
-            'birthday' => '1985-07-15',
-            'family_id' => $family->id
+            'birthday'       => '1985-07-15',
+            'family_id'      => $family->id,
         ]);
     }
 
@@ -103,8 +103,8 @@ abstract class TestCase extends IlluminateTestCase
     {
         return $this->family = Family::create([
             'last_name' => 'McGraw',
-            'location' => 'Uncanny Creek',
-            'state' => 'Kentucky'
+            'location'  => 'Uncanny Creek',
+            'state'     => 'Kentucky',
         ]);
     }
 
@@ -116,23 +116,23 @@ abstract class TestCase extends IlluminateTestCase
     protected function createBusiness()
     {
         return $this->business = Business::create([
-            'name' => 'Uncanny Creek Banjo and Moonshine Emporium',
-            'address' => '123 S. River Road',
+            'name'         => 'Uncanny Creek Banjo and Moonshine Emporium',
+            'address'      => '123 S. River Road',
             'phone_number' => '12345678',
-            'family_id' => $this->family->id
+            'family_id'    => $this->family->id,
         ]);
     }
 
     protected function createSibling($family)
     {
         return User::create([
-            'username' => 'littlejohny',
-            'email' => 'littlejohny@example.com',
-            'ssn' => '234-56-7890',
-            'password' => Hash::make('randomstring'),
+            'username'       => 'littlejohny',
+            'email'          => 'littlejohny@example.com',
+            'ssn'            => '234-56-7890',
+            'password'       => Hash::make('randomstring'),
             'favorite_color' => 'black',
-            'birthday' => '1987-10-25',
-            'family_id' => $family->id
+            'birthday'       => '1987-10-25',
+            'family_id'      => $family->id,
         ]);
     }
 }
