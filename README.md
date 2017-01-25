@@ -1,6 +1,7 @@
 # Laravel Laundromat  
 [![Build Status](https://travis-ci.org/zachleigh/laravel-laundromat.svg?branch=master)](https://travis-ci.org/zachleigh/laravel-laundromat)
-[![Latest Stable Version](https://poser.pugx.org/zachleigh/laravel-laundromat/version.svg)](//packagist.org/packages/zachleigh/laravel-laundromat) 
+[![Latest Stable Version](https://poser.pugx.org/zachleigh/laravel-laundromat/version.svg)](//packagist.org/packages/zachleigh/laravel-laundromat)   
+[![StyleCI](https://styleci.io/repos/64065434/shield?style=flat)](https://styleci.io/repos/64065434)    
 [![License](https://poser.pugx.org/zachleigh/laravel-laundromat/license.svg)](//packagist.org/packages/zachleigh/laravel-laundromat)  
 ##### Take your objects to the cleaners before sending them clientside. 
 This package gives you an easy way to filter your objects to remove sensitve data before sending them client-side.
@@ -135,6 +136,12 @@ class User extends Model
 ```
 
 ### Upgrade Information
+##### From 1.1.* to 1.2.0
+Version 1.2.0 adds Laravel 5.4 support. For Laravel 5.3, please use [Version 1.1.0](https://github.com/zachleigh/laravel-laundromat/tree/v1.1.0):
+```
+composer require zachleigh/laravel-laundromat:1.1.*
+```
+
 ##### From 1.0.* to 1.1.0
 Version 1.1.0 adds Laravel 5.3 support. For Laravel 5.2, please use [Version 1.0.2](https://github.com/zachleigh/laravel-laundromat/tree/v1.0.2):
 ```
