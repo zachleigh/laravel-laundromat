@@ -8,6 +8,7 @@ This package gives you an easy way to filter your objects to remove sensitve dat
 
 ### Contents
   - [Demo](#demo)
+  - [Upgrade Information](#upgrade-information)
   - [Install](#install)
   - [Contributing](#contributing)
 
@@ -132,6 +133,13 @@ class User extends Model
     
     //
 }
+```
+
+### Upgrade Information
+##### From 1.0.* to 1.1.0
+Version 1.1.0 adds Laravel 5.3 support. For Laravel 5.2, please use [Version 1.0.2](https://github.com/zachleigh/laravel-laundromat/tree/v1.0.2):
+```
+composer require zachleigh/laravel-laundromat:1.0.*
 ```
 
 ### Install
