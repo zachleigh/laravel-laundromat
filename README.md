@@ -1,7 +1,7 @@
 # Laravel Laundromat  
 [![Build Status](https://travis-ci.org/zachleigh/laravel-laundromat.svg?branch=master)](https://travis-ci.org/zachleigh/laravel-laundromat)
-[![Latest Stable Version](https://poser.pugx.org/zachleigh/laravel-laundromat/version.svg)](//packagist.org/packages/zachleigh/laravel-laundromat)   
-[![StyleCI](https://styleci.io/repos/64065434/shield?style=flat)](https://styleci.io/repos/64065434)    
+[![Latest Stable Version](https://poser.pugx.org/zachleigh/laravel-laundromat/version.svg)](//packagist.org/packages/zachleigh/laravel-laundromat)
+[![StyleCI](https://styleci.io/repos/64065434/shield?style=flat)](https://styleci.io/repos/64065434)
 [![License](https://poser.pugx.org/zachleigh/laravel-laundromat/license.svg)](//packagist.org/packages/zachleigh/laravel-laundromat)  
 ##### Take your objects to the cleaners before sending them clientside. 
 This package gives you an easy way to filter your objects to remove sensitve data before sending them client-side.
