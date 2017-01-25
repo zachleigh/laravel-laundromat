@@ -2,12 +2,10 @@
 
 namespace LaravelLaundromat;
 
-use Illuminate\Console\AppNamespaceDetectorTrait;
+use Illuminate\Container\Container;
 
 trait Washable
 {
-    use AppNamespaceDetectorTrait;
-
     /**
      * Clean the current object before sending to front end.
      *
@@ -86,7 +84,7 @@ trait Washable
      */
     protected function getStandardCleanerNamespace($className)
     {
-        $namespace = $this->getAppNamespace().'Cleaners\\';
+        $namespace = Container::getInstance()->getNamespace().'Cleaners\\';
 
         return $namespace.$className;
     }

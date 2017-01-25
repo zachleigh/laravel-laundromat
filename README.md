@@ -5,7 +5,6 @@
 ##### Take your objects to the cleaners before sending them clientside. 
 This package gives you an easy way to filter your objects to remove sensitve data before sending them client-side.
 
-
 ### Contents
   - [Demo](#demo)
   - [Upgrade Information](#upgrade-information)

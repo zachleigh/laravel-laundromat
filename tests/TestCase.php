@@ -8,12 +8,13 @@ use LaravelLaundromat\tests\testdata\User;
 use LaravelLaundromat\tests\testdata\Family;
 use LaravelLaundromat\tests\testdata\Business;
 use LaravelLaundromat\LaundromatServiceProvider;
-use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
+// use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
+use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 use LaravelLaundromat\tests\testdata\migrations\CreateUsersTable;
 use LaravelLaundromat\tests\testdata\migrations\CreateFamilyTable;
 use LaravelLaundromat\tests\testdata\migrations\CreateBusinessTable;
 
-abstract class TestCase extends IlluminateTestCase
+abstract class TestCase extends BaseTestCase
 {
     /**
      * Testing property bag register.
