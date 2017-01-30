@@ -2,7 +2,6 @@
 
 namespace LaravelLaundromat;
 
-use LaravelLaundromat\Cleaner;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -172,30 +171,59 @@ class Cleaner
     /**
      * Set property value on clean object.
      *
-     * @param Model $dirty     [Original, dirty object]
-     * @param string $property [Property name]
+     * @param Model   $dirty    [Original, dirty object]
+     * @param string  $property [Property name]
      * @param Cleaner $object   [Clean object]
-     * @param string $type     [Type of property: 'property', 'method']
-     * @param string $relation [Relationship name]
+     * @param string  $type     [Type of property: 'property', 'method']
+     * @param string  $relation [Relationship name]
      */
-    protected function setProperty(Model $dirty, $property, Cleaner $object, $type, $relation = null)
-    {
+    protected function setProperty(
+        Model $dirty,
+        $property,
+        Cleaner $object,
+        $type,
+        $relation = null
+    ) {
         $key = snake_case($property);
 
         if (is_null($relation)) {
             return $this->{$key} = $this->getValue($dirty, $property, $type);
-        }
-
-        if (is_null($dirty->{$relation})) {
+        } elseif (is_null($dirty->{$relation})) {
             return $object->{$relation} = null;
-        }
-
-        if (!$dirty->{$relation} instanceof Collection) {
+        } elseif (!$dirty->{$relation} instanceof Collection) {
             $value = $this->getValue($dirty->{$relation}, $property, $type);
 
             return $object->{$relation}->{$key} = $value;
         }
 
+        $this->setPropertiesOnRelations(
+            $dirty,
+            $property,
+            $object,
+            $type,
+            $relation,
+            $key
+        );
+    }
+
+    /**
+     * Set property value on clean object.
+     *
+     * @param Model   $dirty    [Original, dirty object]
+     * @param string  $property [Property name]
+     * @param Cleaner $object   [Clean object]
+     * @param string  $type     [Type of property: 'property', 'method']
+     * @param string  $relation [Relationship name]
+     * @param string  $key
+     */
+    protected function setPropertiesOnRelations(
+        Model $dirty,
+        $property,
+        Cleaner $object,
+        $type,
+        $relation,
+        $key
+    ) {
         if ($object->{$relation} instanceof EmptyCleaner) {
             $object->{$relation} = [];
         }
@@ -214,7 +242,7 @@ class Cleaner
     /**
      * Get the value from the named property/method off object.
      *
-     * @param Model $object [Object which contains property/method]
+     * @param Model  $object [Object which contains property/method]
      * @param string $name   [Name of property/method]
      * @param string $type   ['method' or 'property']
      *

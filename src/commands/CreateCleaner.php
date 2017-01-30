@@ -31,11 +31,7 @@ class CreateCleaner extends Command
      */
     public function handle()
     {
-        if (!File::exists(app_path('Cleaners'))) {
-            $this->info('Creating Cleaners directory...');
-
-            File::makeDirectory(app_path('Cleaners'));
-        }
+        $this->createDirectory();
 
         $namespace = $this->getAppNamespace().'Cleaners';
 
@@ -52,6 +48,18 @@ class CreateCleaner extends Command
         $this->writeCleaner($name, $namespace);
 
         $this->info("Cleaner {$name} was successfully created!");
+    }
+
+    /**
+     * Create Cleaners directory if it doesn't exist.
+     */
+    protected function createDirectory()
+    {
+        if (!File::exists(app_path('Cleaners'))) {
+            $this->info('Creating Cleaners directory...');
+
+            File::makeDirectory(app_path('Cleaners'));
+        }
     }
 
     /**

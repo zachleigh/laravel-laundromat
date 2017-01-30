@@ -121,6 +121,11 @@ abstract class TestCase extends BaseTestCase
         ]);
     }
 
+    /**
+     * Create a sibling.
+     *
+     * @return User
+     */
     protected function createSibling($family)
     {
         return User::create([
