@@ -2,10 +2,27 @@
 
 namespace LaravelLaundromat;
 
+use LaravelLaundromat\Cleaner;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class Cleaner
 {
+    /**
+     * Properties allowed on the clean object.
+     *
+     * @var array
+     */
+    protected $allowed = [];
+
+    /**
+     * Methods to run. Returned value will be stored as a snake case property
+     * on the clean object.
+     *
+     * @var array
+     */
+    protected $methods = [];
+
     /**
      * Clean the dirty object.
      *
@@ -85,11 +102,11 @@ class Cleaner
      * Set the nested property on the cleaner object.
      *
      * @param string $propString [Property string]
-     * @param object $dirty      [Original dirty object]
+     * @param Model  $dirty      [Original dirty object]
      * @param string $type       [Type of nested property: 'property', 'method']
      * @param object $object     [Object to set property on]
      */
-    protected function setNestedProperty($propString, $dirty, $type, $object = null)
+    protected function setNestedProperty($propString, Model $dirty, $type, $object = null)
     {
         $object = is_null($object) ? $this : $object;
 
@@ -155,13 +172,13 @@ class Cleaner
     /**
      * Set property value on clean object.
      *
-     * @param object $dirty    [Original, dirty object]
+     * @param Model $dirty     [Original, dirty object]
      * @param string $property [Property name]
-     * @param object $object   [Clean object]
+     * @param Cleaner $object   [Clean object]
      * @param string $type     [Type of property: 'property', 'method']
      * @param string $relation [Relationship name]
      */
-    protected function setProperty($dirty, $property, $object, $type, $relation = null)
+    protected function setProperty(Model $dirty, $property, Cleaner $object, $type, $relation = null)
     {
         $key = snake_case($property);
 
@@ -197,13 +214,13 @@ class Cleaner
     /**
      * Get the value from the named property/method off object.
      *
-     * @param object $object [Object which contains property/method]
+     * @param Model $object [Object which contains property/method]
      * @param string $name   [Name of property/method]
      * @param string $type   ['method' or 'property']
      *
      * @return mixed
      */
-    protected function getValue($object, $name, $type)
+    protected function getValue(Model $object, $name, $type)
     {
         if ($type === 'method') {
             if (method_exists($object, $name)) {

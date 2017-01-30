@@ -3,6 +3,7 @@
 namespace LaravelLaundromat;
 
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class LaundromatServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class LaundromatServiceProvider extends ServiceProvider
     public function register()
     {
         Collection::macro('clean', function ($class = null) {
-            return $this->map(function ($item) use ($class) {
+            return $this->map(function (Model $item) use ($class) {
                 return $item->clean($class);
             });
         });

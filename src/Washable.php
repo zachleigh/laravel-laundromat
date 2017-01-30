@@ -15,7 +15,7 @@ trait Washable
      */
     public function clean($cleanerName = null)
     {
-        if ($cleanerName) {
+        if ($cleanerName !== null) {
             return $this->callCleaner($cleanerName);
         } elseif (isset($this->defaultCleaner)) {
             return $this->callCleaner($this->defaultCleaner);
